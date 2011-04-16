@@ -1,8 +1,8 @@
 class Object
-  def returning(value)
+  def tap(value)
     yield(value)
     value
-  end unless Object.respond_to?(:returning)
+  end unless Object.respond_to?(:tap)
 end
 
 class Symbol

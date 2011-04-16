@@ -2,7 +2,7 @@ require 'git-style-binary'
 
 module GitStyleBinary
   def self.command(&block)
-    returning Command.new(:constraints => [block]) do |c|
+    Command.new(:constraints => [block]).tap do |c|
       c.name ||= (GitStyleBinary.name_of_command_being_loaded || GitStyleBinary.current_command_name)
       GitStyleBinary.known_commands[c.name] = c
 
@@ -13,7 +13,7 @@ module GitStyleBinary
   end
 
   def self.primary(&block)
-    returning Primary.new(:constraints => [block]) do |c|
+    Primary.new(:constraints => [block]).tap do |c|
       c.name ||= (GitStyleBinary.name_of_command_being_loaded || GitStyleBinary.current_command_name)
       GitStyleBinary.known_commands[c.name] = c
 
