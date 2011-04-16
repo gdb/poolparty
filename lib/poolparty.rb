@@ -1,3 +1,4 @@
+require 'yaml'
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 t=Time.now

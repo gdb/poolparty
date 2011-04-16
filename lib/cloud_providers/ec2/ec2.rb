@@ -3,7 +3,7 @@
   This serves as the basis for running PoolParty on Amazon's ec2 cloud.
 =end
 begin
-  require 'AWS'
+  require 'aws'
 rescue LoadError
   puts <<-EOM
   There was an error requiring AWS
